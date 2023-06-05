@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
-
-  #Hello Team
   def home
+  end
+
+  def uikit
   end
 end

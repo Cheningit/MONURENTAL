@@ -1,0 +1,8 @@
+<h1>Welcome to index page</h1>
+<ul>
+  <%  @buildings.each do |building|%>
+  <li class-list-group-item>
+    <%= link_to building.name, buildings_path(building.id) %>
+  </li>
+  <% end %>
+</ul>

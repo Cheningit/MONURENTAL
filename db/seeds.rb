@@ -5,12 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-puts "cleaning your db...."
-# User.destroy_all
-
-puts "creating users......"
+puts "cleaning your user db...."
 
 User.destroy_all
+puts "creating users......"
+
 # only run once, no need to delete them
 user1 = User.new
 user1.email = 'russell@email.com'
@@ -22,19 +21,19 @@ user2.email = 'tony@example.com'
 user2.password = 'taawktljasktlw4aaglj'
 user2.save!
 
-# user3 = User.new
-# user3.email = 'victor@homepage.com'
-# user3.password = '#$taawktljasktlw4aaglj'
-# user3.save!
+user3 = User.new
+user3.email = 'victor@homepage.com'
+user3.password = '#$taawktljasktlw4aaglj'
+user3.save!
 
-# user4 = User.new
-# user4.email = 'clement@england.com'
-# user4.password = '#$taawktljasktlw4aaglj'
-# user4.save!
+user4 = User.new
+user4.email = 'clement@england.com'
+user4.password = '#$taawktljasktlw4aaglj'
+user4.save!
 
 
 
-puts "cleaning your db.....:)"
+puts "cleaning your building db.....:)"
 Building.destroy_all
 
 puts "creating buildings...."
@@ -55,8 +54,12 @@ pyramids_of_giza = {address: "30 Lebanon St., MOHANDESEEN", name: "pyramids of g
   puts "Created #{building.name}"
 end
 
+puts "cleaning your booking db.....:)"
+Booking.destroy_all
+
 puts "Creating booking"
 booking1 = Booking.new( status: "unconfirmed", date: "whenever", user: user1, building: Building.first)
 booking2 = Booking.new( status: "unconfirmed", date: "whenever", user: user2, building: Building.last)
 booking3 = Booking.new( status: "unconfirmed", date: "whenever", user: user2, building: Building.first)
+
 puts "Finished!"

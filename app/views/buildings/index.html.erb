@@ -2,7 +2,7 @@
 <ul>
   <%  @buildings.each do |building|%>
   <li class-list-group-item>
-    <%= link_to building.name, buildings_path(building.id) %>
+    <%= link_to building.name, building_path(building.id) %>
   </li>
   <% end %>
 </ul>

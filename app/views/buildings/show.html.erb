@@ -1,0 +1,9 @@
+<h1>Show Page</h1>
+
+<p>Address: <%= @building.address %></p>
+<p>name: <%= @building.name %></p>
+<p>beds: <%= @building.beds %></p>
+<p>price: <%= @building.price %></p>
+<p>availability: <%= @building.availability %></p>
+
+<%= cl_image_tag @building.photo.key, height: 300, width: 400, crop: :fill %>

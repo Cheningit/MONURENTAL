@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/uikit", to: "pages#uikit"
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :buildings, only: [:index, :show] do
+  resources :buildings, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:index, :show, :edit, :destroy]

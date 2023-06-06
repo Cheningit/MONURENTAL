@@ -26,16 +26,15 @@ user2.email = 'tony@example.com'
 user2.password = 'taawktljasktlw4aaglj'
 user2.save!
 
-# user3 = User.new
-# user3.email = 'victor@homepage.com'
-# user3.password = '#$taawktljasktlw4aaglj'
-# user3.save!
+user3 = User.new
+user3.email = 'victor@homepage.com'
+user3.password = '#$taawktljasktlw4aaglj'
+user3.save!
 
-# user4 = User.new
-# user4.email = 'clement@england.com'
-# user4.password = '#$taawktljasktlw4aaglj'
-# user4.save!
-
+user4 = User.new
+user4.email = 'clement@england.com'
+user4.password = '#$taawktljasktlw4aaglj'
+user4.save!
 
 
 puts "creating buildings...."
@@ -50,7 +49,6 @@ statue_of_liberty = {address: "New York, NY 10004", name: "statue of liberty", b
 machu_pichu = {address: "QGF3+F3 Aguas Calientes, Peru", name: "machu pichu", beds: 5, price:100000, availability: "20/7/2023", user: user2}
 sydney_opera_house = {address: "Bennelong Point, Easy walk from Circular Quay Train Station, Sydney, AU 2000", name: "sydney opera house", beds: 5, price:100000, availability: "6/7/2023", user: user1}
 pyramids_of_giza = {address: "30 Lebanon St., MOHANDESEEN", name: "pyramids of giza", beds: 5, price:100000, availability: "9/7/2023", user: user1}
-
 
 # cloudinary section
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686058044/Tour_Eiffel_Wikimedia_Commons__28cropped_29_m76qge.jpg")
@@ -87,3 +85,13 @@ file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686058365/K
 building = Building.new(pyramids_of_giza)
 building.photo.attach(io: file, filename: "pyramids_of_giza.jpg", content_type: "image/jpg")
 building.save!
+
+puts "cleaning your booking db.....:)"
+Booking.destroy_all
+
+puts "Creating booking"
+booking1 = Booking.new( status: "unconfirmed", date: "whenever", user: user1, building: Building.first)
+booking2 = Booking.new( status: "unconfirmed", date: "whenever", user: user2, building: Building.last)
+booking3 = Booking.new( status: "unconfirmed", date: "whenever", user: user2, building: Building.first)
+
+puts "Finished!"

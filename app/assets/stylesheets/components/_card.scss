@@ -2,3 +2,21 @@
   width: 200px;
   height: 200px;
 }
+
+.card {
+  width: 200px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgb(230, 230, 230);
+    text-align: center;
+    padding: 20px;
+    border: 1px solid rgb(230, 230, 230);
+    transition: all 0.5s;
+
+    &:hover {
+      box-shadow: 0 0 10px rgb(230, 230, 230);
+      border-color: rgb(141, 21, 107);
+      border-radius: 20px;
+      cursor: pointer;
+      border: 3px solid rgb(141, 21, 107);
+    }
+}

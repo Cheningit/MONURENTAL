@@ -10,6 +10,7 @@ puts "cleaning your db...."
 
 puts "creating users......"
 
+User.destroy_all
 # only run once, no need to delete them
 user1 = User.new
 user1.email = 'russell@email.com'
@@ -32,6 +33,7 @@ user2.save!
 # user4.save!
 
 
+
 puts "cleaning your db.....:)"
 Building.destroy_all
 
@@ -52,4 +54,9 @@ pyramids_of_giza = {address: "30 Lebanon St., MOHANDESEEN", name: "pyramids of g
   building = Building.create!(attributes)
   puts "Created #{building.name}"
 end
+
+puts "Creating booking"
+booking1 = Booking.new( status: "unconfirmed", date: "whenever", user: user1, building: Building.first)
+booking2 = Booking.new( status: "unconfirmed", date: "whenever", user: user2, building: Building.last)
+booking3 = Booking.new( status: "unconfirmed", date: "whenever", user: user2, building: Building.first)
 puts "Finished!"

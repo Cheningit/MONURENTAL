@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 require "open-uri"
+require "date"
 
 puts "cleaning your db.....:)"
 Building.destroy_all
@@ -90,8 +91,8 @@ puts "cleaning your booking db.....:)"
 Booking.destroy_all
 
 puts "Creating booking"
-booking1 = Booking.new( status: "unconfirmed", date: "whenever", user: user1, building: Building.first)
-booking2 = Booking.new( status: "unconfirmed", date: "whenever", user: user2, building: Building.last)
-booking3 = Booking.new( status: "unconfirmed", date: "whenever", user: user2, building: Building.first)
+booking1 = Booking.new( status: "unconfirmed", date: "TBC", user: user1, building: Building.first)
+booking2 = Booking.new( status: "unconfirmed", date: "TBC", user: user2, building: Building.last)
+booking3 = Booking.new( status: "unconfirmed", date: "TBC", user: user2, building: Building.first)
 
 puts "Finished!"

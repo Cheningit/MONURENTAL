@@ -3,26 +3,33 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 150px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   width: 100%;
   margin: 0 auto;
+  flex-direction: column;
 }
 .footer-links {
   display: flex;
   align-items: center;
+  margin: 40px;
 }
 .footer-links a {
   color: black;
   opacity: 0.15;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 30px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
   opacity: 1;
+  font-size: 40px;
 }
 .footer .fa-heart {
   color: #783b7a;
+}
+
+.footer-copyright {
+  margin-bottom: 30px;
 }

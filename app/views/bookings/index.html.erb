@@ -1,11 +1,16 @@
-<h1>Here are your current bookings:</h1>
+<h1>Here are your upcoming bookings:</h1>
 <ul>
   <%  @bookings.each do |booking|%>
   <li class-list-group-item>
-    <%= booking[:building].address %>
+    <%= booking.building.address %>
   </li>
-  <%# <li class-list-group-item>
-    <%= link_to booking[:building], booking_path(booking.id) %>
-  <%# </li> %>
+  <li class-list-group-item>
+    <%= booking.status %>
+  </li>
+  <li class-list-group-item>
+    <%= booking.date %>
+  </li>
   <% end %>
 </ul>
+
+<%= link_to "Back to Monuments", buildings_path() %>

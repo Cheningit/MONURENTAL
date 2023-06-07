@@ -7,16 +7,12 @@
             <div id="carouselExampleInterval <%=building.id %>" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="10000">
-            <img src="https://lp-cms-production.imgix.net/2020-11/GettyRF_1085205362.jpg">
+            <%= cl_image_tag building.photos[0].key, height: 300, width: 400, crop: :fill%>
             <%# <%= building.key %>
           </div>
           <div class="carousel-item" data-bs-interval="2000">
-            <img src="https://lp-cms-production.imgix.net/2020-11/GettyRF_1085205362.jpg">
+            <%= cl_image_tag building.photos[1].key, height: 300, width: 400, crop: :fill%>
             <%# # <%= building.key %>
-          </div>
-          <div class="carousel-item">
-            <img src="https://lp-cms-production.imgix.net/2020-11/GettyRF_1085205362.jpg">
-            <%# <%= building.key %>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval <%=building.id %>" data-bs-slide="prev">
@@ -37,9 +33,22 @@
         </div>
       </div>
 
+            <div class="carousel-item" data-bs-interval="2000">
+              <%= cl_image_tag building.photos[1].key, height: 300, width: 400, crop: :fill%>
+            </div>
+          </div>
 
     </div>
 
   <% end %>
   </div>
 </div>
+
+<h1>Welcome to index page</h1>
+<ul>
+  <%  @buildings.each do |building|%>
+  <li class-list-group-item>
+    <%= link_to building.name, building_path(building.id) %>
+  </li>
+  <% end %>
+</ul>

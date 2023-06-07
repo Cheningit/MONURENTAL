@@ -7,4 +7,10 @@ class BuildingsController < ApplicationController
   def show
     @building = Building.find(params[:id])
   end
+
+  private
+
+  def buildings_params
+    params.require(:building).permit(:address, :name, :beds, :price, :availability, photos: [])
+  end
 end

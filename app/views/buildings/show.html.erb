@@ -7,3 +7,5 @@
 <p>availability: <%= @building.availability %></p>
 
 <%= cl_image_tag @building.photo.key, height: 300, width: 400, crop: :fill %>
+
+<%= link_to "Book Today", new_building_booking_path(@building) %>

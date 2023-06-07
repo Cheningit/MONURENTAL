@@ -1,32 +1,46 @@
-<h1>Your Dream Vacation Starts Here!</h1>
-
-<%# render "pages/navbar" %>
-
+<h1>Welcome to index page</h1>
 <div class="container">
   <div class="row">
+  <%  @buildings.each do |building|%>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+            <div id="carouselExampleInterval <%=building.id %>" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <%= cl_image_tag building.photos[0].key, height: 300, width: 400, crop: :fill%>
+            <%# <%= building.key %>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <%= cl_image_tag building.photos[1].key, height: 300, width: 400, crop: :fill%>
+            <%# # <%= building.key %>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval <%=building.id %>" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval <%=building.id %>" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+        <%# <img src="https://lp-cms-production.imgix.net/2020-11/GettyRF_1085205362.jpg" alt="Pyramids" class="card_img"> %>
+        <div class="card-body">
+          <p class="card-text"> The Great Pyramids</p>
+          <%# <p><button type="button" class="btn btn-dark btn-lg">Book</button></p> %>
+          <  link_to building.name, building_path(building.id), class: "btn btn-dark btn-lg" >
 
-    <% @buildings.each do |building|%>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-
-            <div class="carousel-item active" data-bs-interval="10000">
-              <%= cl_image_tag building.photos[0].key, height: 300, width: 400, crop: :fill%>
-            </div>
+        </div>
+      </div>
 
             <div class="carousel-item" data-bs-interval="2000">
               <%= cl_image_tag building.photos[1].key, height: 300, width: 400, crop: :fill%>
             </div>
           </div>
 
-          <div class="card-body">
-            <p class="card-text"> The Great Pyramids</p>
-            <p><button type="button" class="btn btn-dark btn-lg" link_to building.name, building_path(building.id) >View</button></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    </div>
+
+  <% end %>
   </div>
 </div>
 

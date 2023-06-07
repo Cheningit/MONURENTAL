@@ -1,0 +1,22 @@
+.middle {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 246px;
+  padding: 0px 50px;
+  color: rgba(0, 0, 0, 0.576);
+  width: 87%;
+  margin: 0 auto;
+  border: rgb(106, 13, 86) 2px solid;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 31px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgb(230, 230, 230);
+}
+
+.middle-copyright {
+  margin-left: 20px;
+  margin-right: 20px;
+}

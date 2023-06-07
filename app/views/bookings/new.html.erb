@@ -1,0 +1,12 @@
+<p>Book Now</p>
+<div class="col-6">
+  <%= simple_form_for [@building, @booking] do |f| %>
+    <%= f.input :date %>
+    <%= f.input :status %>
+    <%#= f.association :availability_from, prompt: "Choose a Date"%>
+    <%#= f.association :availability_to, prompt: "Choose a Date"%>
+    <div class="center-submit">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

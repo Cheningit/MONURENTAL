@@ -31,12 +31,11 @@
         <%# <img src="https://lp-cms-production.imgix.net/2020-11/GettyRF_1085205362.jpg" alt="Pyramids" class="card_img"> %>
         <div class="card-body">
           <p class="card-text"> The Great Pyramids</p>
-          <p><button type="button" class="btn btn-dark btn-lg">Book</button></p>
+          <%# <p><button type="button" class="btn btn-dark btn-lg">Book</button></p> %>
+           <%= link_to "Book", building_path(building), class: "btn btn-dark btn-lg"  %>
         </div>
       </div>
-    <%# card %>
-    <%# <sibling : description> %>
-    <%# carousel %>
+   
 
     </div>
     <div class="col">

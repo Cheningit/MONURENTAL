@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @building = Building.find(params[:building_id])
     @booking.building = @building
+    @booking.total_price = ((@booking.end_date - @booking.start_date) * @building.price).to_i
     @booking.user = current_user
 
     if @booking.save

@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
 
     # @bookings_owner = Booking.where("building.user" => current_user)
     @bookings_owner = Booking.joins(:building).where(buildings: { user: current_user })
-
   end
 
   def destroy

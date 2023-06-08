@@ -54,13 +54,14 @@ puts "creating buildings...."
 
 # availability has to be an actual date
 
-eiffel_tower = {address: "Champ de Mars, 5 Av. Anatole France, 75007 Paris, France", name: "eiffel tower", beds: 5, price:100000, availability: "5/7/2023", user: user1}
-taj_mahal = {address: "Dharmapuri, Forest Colony, Tajganj, Agra, Uttar Pradesh 282001, India", name: "taj mahal", beds: 750, price:9506500, availability: "5/8/2023", user: user4}
-great_wall_of_china = {address: "CHJC+Q4 Sanduhe Town, Huairou District, Beijing, China", name: "great wall of china", beds: 1000000, price:90000, availability: "10/7/2023", user: user2}
-statue_of_liberty = {address: "New York, NY 10004", name: "statue of liberty", beds: 50, price:100000, availability: "5/7/2023", user: user1}
-machu_pichu = {address: "QGF3+F3 Aguas Calientes, Peru", name: "machu pichu", beds: 30, price:100000, availability: "20/7/2023", user: user2}
-sydney_opera_house = {address: "Bennelong Point, Easy walk from Circular Quay Train Station, Sydney, AU 2000", name: "sydney opera house", beds: 50, price:1000950, availability: "6/7/2023", user: user3}
-pyramids_of_giza = {address: "30 Lebanon St., MOHANDESEEN", name: "pyramids of giza", beds: 1000, price:100000, availability: "9/7/2023", user: user1}
+eiffel_tower = {address: "France, Paris, Champ de Mars, 5 Av. Anatole France, 75007 ", name: "eiffel tower", beds: 5, price:100000, availability: "5/7/2023", user: user1}
+taj_mahal = {address: "India, Dharmapuri, Tajganj, Agra, Uttar Pradesh 282001,", name: "taj mahal", beds: 750, price:9506500, availability: "5/8/2023", user: user4}
+great_wall_of_china = {address: "Chine, Beijing, Sanduhe Town, Huairou District,", name: "great wall of china", beds: 1000000, price:90000, availability: "10/7/2023", user: user2}
+statue_of_liberty = {address: "SUA, New York, NY 10004 Liberty Island York Harbor", name: "statue of liberty", beds: 50, price:100000, availability: "5/7/2023", user: user1}
+machu_pichu = {address: " Peru  Aguas Calientes, Northwest of Cuzco", name: "machu pichu", beds: 30, price:100000, availability: "20/7/2023", user: user2}
+sydney_opera_house = {address: "Bennelong Point, Circular Quay Train Station, Sydney, AU 2000", name: "sydney opera house", beds: 50, price:1000950, availability: "6/7/2023", user: user3}
+pyramids_of_giza = {address: "Egipt, MOHANDESEEN, 30 Lebanon St., ", name: "pyramids of giza", beds: 1000, price:100000, availability: "9/7/2023", user: user1}
+colosseum = {address: "Italy, Rome, Piazza del Colosseo, 1, 00184 ", name: "colosseum", beds: 300, price:569000, availability: "9/7/2023", user: user1}
 
 # cloudinary section
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686058044/Tour_Eiffel_Wikimedia_Commons__28cropped_29_m76qge.jpg")
@@ -95,6 +96,11 @@ building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686058251/Sydney_Australia.__2821339175489_29_viojab.jpg")
 building = Building.new(sydney_opera_house)
+building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
+building.save!
+
+file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686231665/pexels-mark-neal-2225439_qtfezt.jpg")
+building = Building.new(colosseum)
 building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
 building.save!
 

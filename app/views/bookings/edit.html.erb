@@ -1,0 +1,12 @@
+<h1>Edit Booking</h1>
+<div class="col-6">
+  <%= simple_form_for @booking do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <div class="center-submit">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>
+  <%# <% days = :end_date - :start_date %>
+  <%# <p>Staying for <%= days days%>
+</div>

@@ -2,7 +2,7 @@
   <div class="row">
   <%  @buildings.each do |building|%>
     <div class="col">
-      <div class="card" style="width: 18rem;">
+      <div class="card mb-3" style="width: 18rem;">
             <div id="carouselExampleInterval <%=building.id %>" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="10000">
@@ -27,8 +27,9 @@
         <div class="card-body">
           <%# <p class="card-text"> The Great Pyramids</p> %>
           <%# <p><button type="button" class="btn btn-dark btn-lg">Book</button></p> %>
-
-          <%=  link_to building.name, building_path(building), class: "btn btn-dark btn-lg" %>
+        <div class="btn btn-dark btn-lg bookings-button" style="background-color:red; width: 100%; height: 65px;">
+          <%=  link_to building.name, building_path(building) %>
+        </div>
 
 
         </div>

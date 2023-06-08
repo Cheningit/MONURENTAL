@@ -21,6 +21,9 @@
     <strong>Total cost</strong> - £ <%= (days.to_i)*(booking.building.price.to_i) %>
   </li>
   <br>
+  <%= link_to "Edit Reservation", edit_booking_path(booking)  %>
+  <%= link_to "Delete Reservation", booking_path(booking),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
   <% end %>
 </ul>
 

@@ -5,3 +5,9 @@
     margin-top: 30px;
     flex-wrap: wrap;
 }
+
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 30px;
+  }
+}

@@ -1,5 +1,5 @@
 .footer {
-  background: #EEEEFB;
+  background: #494850;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,8 +16,8 @@
   margin: 40px;
 }
 .footer-links a {
-  color: black;
-  opacity: 0.15;
+  color: #E9D758;
+  opacity: 1;
   text-decoration: none;
   font-size: 30px;
   padding: 0px 10px;
@@ -32,4 +32,6 @@
 
 .footer-copyright {
   margin-bottom: 30px;
+  color: black;
+  opacity: 1;
 }

@@ -1,4 +1,7 @@
 class BookingsController < ApplicationController
+  require 'open-uri'
+  require 'cgi'
+
   def index
     @bookings = Booking.where(user: current_user)
 
@@ -41,8 +44,16 @@ class BookingsController < ApplicationController
   end
 
   def download
+    @info = Booking.find(params[:id])
     pdf = Prawn::Document.new
-    pdf.text text()
+    pdf.text text(@info)
+
+    # image_path = Rails.root.join('app/assets/images/QR1.jpeg')
+    # sanitized_path = File.expand_path(image_path)
+    # image_data = File.open(sanitized_path, 'rb') { |file| file.read }
+    # pdf.image(image_data, width: 200)  # Adjust the width as needed
+
+
     send_data(pdf.render,
       filename: 'reservation.pdf',
       type: 'application/pdf')
@@ -54,7 +65,7 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:status, :date, :start_date, :end_date, :total_price)
   end
 
-  def text
+  def text(booking)
     "Subject: Reservation Confirmation
 
     Dear Customer,
@@ -63,22 +74,22 @@ class BookingsController < ApplicationController
 
     Reservation Details:
 
-    Reservation ID: [Reservation ID]
-    Reservation Date: [Reservation Date]
-    Start Date: [Start Date]
-    End Date: [End Date]
-    Duration: [Duration]
-    Reserved [Item/Service]: [Item/Service Name]
-    Total Cost: [Total Cost]
+    Reservation ID: #{booking.id}
+    Reservation Date: #{booking.created_at}
+    Start Date: #{booking.start_date}
+    End Date: #{booking.end_date}
+    Duration: #{(booking.end_date - booking.start_date).to_i} days
+    Total Cost: #{sprintf('£%.2f', booking.total_price).gsub(/(\d)(?=(\d{3})+(?!\d))/, '\1,')}
     Please note the following terms and conditions for your reservation:
 
-    Payment: A deposit of [Deposit Amount] is required to secure your reservation. The remaining balance of [Remaining Balance] is due on or before the start date of the reservation.
-    Cancellation Policy: In case of cancellation, please notify us at least [Cancellation Notice Period] days in advance. Cancellations made within [Cancellation Penalty Period] days of the reservation start date may be subject to a cancellation fee of [Cancellation Fee Amount].
-    Check-in/Check-out: Check-in time is at [Check-in Time] on the start date of the reservation. Check-out time is at [Check-out Time] on the end date of the reservation. Late check-outs may incur additional charges.
-    If you have any questions or need further assistance, please feel free to contact us at [Phone Number] or [Email Address]. We look forward to hosting you and ensuring a memorable experience.
+    Payment: A deposit of £2,500,000 is required to secure your reservation. The remaining balance is due on or before the start date of the reservation.
+    Cancellation Policy: In case of cancellation, please notify us at least 14 days days in advance. Cancellations made within 7 days of the reservation start date may be subject to a cancellation fee of 10% of total fee.
+    Check-in/Check-out: Check-in time is at 09:00 Local Time on the start date of the reservation. Check-out time is at 13:00 on the end date of the reservation. Late check-outs may incur additional charges.
+    If you have any questions or need further assistance, please feel free to contact us at +33 3033 3033 or rental@monurental.com. We look forward to hosting you and ensuring a memorable experience.
 
     Thank you for choosing Monumental. We appreciate your business!
 
-    Sincerely,"
+    Sincerely,
+    A Monurental Team"
   end
 end

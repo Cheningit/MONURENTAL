@@ -1,11 +1,23 @@
-<h1>Show Page</h1>
+<br>
+<div>
+  <div class="col-7">
+    <div class="booking-card">
 
-<p>Address: <%= @building.address %></p>
-<p>name: <%= @building.name.titleize %></p>
-<p>beds: <%= @building.beds %></p>
-<p>price: <%= @building.price %></p>
-<p>availability: <%= @building.availability %></p>
+      <h1>The <%= @building.name.titleize %></h1>
+      <p>Address: <%= @building.address %></p>
+      <p>Beds: <%= @building.beds %></p>
+      <p>Price: <%= @building.price %></p>
+      <p>Next availabile from: <%= @building.availability %></p>
 
-<%= cl_image_tag @building.photos[0].key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @building.photos[0].key, height: 300, width: 400, crop: :fill %>
+    </div>
+    <br>
+    <div class="button-container">
+      <%= link_to "Book Today", new_building_booking_path(@building), class: "bookings-button", style:"width: 75%" %>
+    </div>
+  </div>
 
-<%= link_to "Book Today", new_building_booking_path(@building) %>
+  <div class="col-5">
+    <%# #placeholder for map %>
+  </div>
+</div>

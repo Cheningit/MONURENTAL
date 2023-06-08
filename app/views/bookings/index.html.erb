@@ -1,4 +1,4 @@
-<h1>Here are your upcoming bookings:</h1>
+<h1>Here are your upcoming Monumental bookings:</h1>
 <ul>
   <%  @bookings.each do |booking|%>
   <li class-list-group-item>
@@ -23,5 +23,11 @@
   <br>
   <% end %>
 </ul>
+
+
+<h1>Pending requests for your Monument:</h1>
+<% if !@bookings_owner.nil?%>
+  <p><%= "No bookings to review at present" %></p>
+<% end %>
 
 <%= link_to "Back to Monuments", buildings_path() %>

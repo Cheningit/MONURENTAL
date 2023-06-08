@@ -1,7 +1,10 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.where(user: current_user)
-    @buildings = Building.all
+
+    # @bookings_owner = Booking.where("building.user" => current_user)
+    @bookings_owner = Booking.joins(:building).where(buildings: { user: current_user })
+
   end
 
   def destroy

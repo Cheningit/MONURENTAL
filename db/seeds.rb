@@ -30,7 +30,7 @@ user2.password = 'taawktljasktlw4aaglj'
 user2.save!
 
 user3 = User.new
-user3.email = 'victor@homepage.com'
+user3.email = 'victor@issominted.com'
 user3.password = '#$taawktljasktlw4aaglj'
 user3.save!
 
@@ -46,12 +46,12 @@ puts "creating buildings...."
 # availability has to be an actual date
 
 eiffel_tower = {address: "Champ de Mars, 5 Av. Anatole France, 75007 Paris, France", name: "eiffel tower", beds: 5, price:100000, availability: "5/7/2023", user: user1}
-taj_mahal = {address: "Dharmapuri, Forest Colony, Tajganj, Agra, Uttar Pradesh 282001, India", name: "taj mahal", beds: 5, price:10, availability: "5/8/2023", user: user2}
-great_wall_of_china = {address: "CHJC+Q4 Sanduhe Town, Huairou District, Beijing, China", name: "great wall of china", beds: 5, price:90000, availability: "10/7/2023", user: user2}
-statue_of_liberty = {address: "New York, NY 10004", name: "statue of liberty", beds: 5, price:100000, availability: "5/7/2023", user: user1}
-machu_pichu = {address: "QGF3+F3 Aguas Calientes, Peru", name: "machu pichu", beds: 5, price:100000, availability: "20/7/2023", user: user2}
-sydney_opera_house = {address: "Bennelong Point, Easy walk from Circular Quay Train Station, Sydney, AU 2000", name: "sydney opera house", beds: 5, price:100000, availability: "6/7/2023", user: user1}
-pyramids_of_giza = {address: "30 Lebanon St., MOHANDESEEN", name: "pyramids of giza", beds: 5, price:100000, availability: "9/7/2023", user: user1}
+taj_mahal = {address: "Dharmapuri, Forest Colony, Tajganj, Agra, Uttar Pradesh 282001, India", name: "taj mahal", beds: 750, price:9506500, availability: "5/8/2023", user: user4}
+great_wall_of_china = {address: "CHJC+Q4 Sanduhe Town, Huairou District, Beijing, China", name: "great wall of china", beds: 1000000, price:90000, availability: "10/7/2023", user: user2}
+statue_of_liberty = {address: "New York, NY 10004", name: "statue of liberty", beds: 50, price:100000, availability: "5/7/2023", user: user1}
+machu_pichu = {address: "QGF3+F3 Aguas Calientes, Peru", name: "machu pichu", beds: 30, price:100000, availability: "20/7/2023", user: user2}
+sydney_opera_house = {address: "Bennelong Point, Easy walk from Circular Quay Train Station, Sydney, AU 2000", name: "sydney opera house", beds: 50, price:1000950, availability: "6/7/2023", user: user3}
+pyramids_of_giza = {address: "30 Lebanon St., MOHANDESEEN", name: "pyramids of giza", beds: 1000, price:100000, availability: "9/7/2023", user: user1}
 
 # cloudinary section
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686058044/Tour_Eiffel_Wikimedia_Commons__28cropped_29_m76qge.jpg")
@@ -79,24 +79,24 @@ building = Building.new(machu_pichu)
 building.photos.attach(io: file, filename: "machu_pichu.jpg", content_type: "image/jpg")
 building.save!
 
-file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686058251/Sydney_Australia.__2821339175489_29_viojab.jpg")
-building = Building.new(sydney_opera_house)
-building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
-building.save!
-
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686058365/Kheops-Pyramid_f53vtl.jpg")
 building = Building.new(pyramids_of_giza)
 building.photos.attach(io: file, filename: "pyramids_of_giza.jpg", content_type: "image/jpg")
+building.save!
+
+file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686058251/Sydney_Australia.__2821339175489_29_viojab.jpg")
+building = Building.new(sydney_opera_house)
+building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
 building.save!
 
 puts "cleaning your booking db.....:)"
 Booking.destroy_all
 
 puts "Creating booking"
-booking1 = Booking.new( status: "unconfirmed", date: "TBC", user: user1, total_price: 0, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 7), building: Building.first)
+booking1 = Booking.new( status: "unconfirmed", date: "TBC", user: user3, total_price: 0, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 8), building: Building.first)
 booking1.save!
-booking2 = Booking.new( status: "unconfirmed", date: "TBC", user: user2, total_price: 0, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 7), building: Building.last)
+booking2 = Booking.new( status: "unconfirmed", date: "TBC", user: user2, total_price: 0, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 17), building: Building.last)
 booking2.save!
-booking3 = Booking.new( status: "unconfirmed", date: "TBC", user: user2, total_price: 0, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 7),building: Building.first)
+booking3 = Booking.new( status: "unconfirmed", date: "TBC", user: user2, total_price: 0, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 10),building: Building.first)
 booking3.save!
 puts "Finished!"

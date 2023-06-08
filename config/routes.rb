@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  get "download", to: 'bookings#download'
   # get "/buildings", to: "pages#buildings"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # get "/uikit", to: "pages#uikit"

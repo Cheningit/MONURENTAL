@@ -1,32 +1,33 @@
 <h1>Here are your upcoming Monumental bookings:</h1>
-<ul>
-  <%  @bookings.each do |booking|%>
-  <li class-list-group-item>
-    <%= booking.building.address %>
-  </li>
-  <li class-list-group-item>
-    Start Date <%= booking.start_date %>
-  </li>
-  <li class-list-group-item>
-    End Date <%= booking.end_date %>
-  </li>
-  <li class-list-group-item>
-    Status: <%= "Pending" if booking.status.nil? %>
-  </li>
-  <li class-list-group-item>
-    <% days = booking.end_date - booking.start_date%>
-    Duration: <%= days.to_i %> day(s)
-  </li>
-  <li class-list-group-item>
-    <strong>Total cost</strong> - £ <%= (days.to_i)*(booking.building.price.to_i) %>
-  </li>
-  <br>
-  <%= link_to "Edit Reservation", edit_booking_path(booking)  %>
-  <%= link_to "Delete Reservation", booking_path(booking),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
-  <% end %>
-</ul>
-
+<div class="booking-card">
+  <ul>
+    <%  @bookings.each do |booking|%>
+    <li class-list-group-item>
+      <%= booking.building.address %>
+    </li>
+    <li class-list-group-item>
+      Start Date <%= booking.start_date %>
+    </li>
+    <li class-list-group-item>
+      End Date <%= booking.end_date %>
+    </li>
+    <li class-list-group-item>
+      Status: <%= "Pending" if booking.status.nil? %>
+    </li>
+    <li class-list-group-item>
+      <% days = booking.end_date - booking.start_date%>
+      Duration: <%= days.to_i %> day(s)
+    </li>
+    <li class-list-group-item>
+      <strong>Total cost</strong> - £ <%= (days.to_i)*(booking.building.price.to_i) %>
+    </li>
+    <br>
+    <%= link_to "Edit Reservation", edit_booking_path(booking)  %>
+    <%= link_to "Delete Reservation", booking_path(booking),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+    <% end %>
+  </ul>
+</div>
 
 <h1>Pending requests for your Monument:</h1>
 <% if @bookings_owner.empty? %>

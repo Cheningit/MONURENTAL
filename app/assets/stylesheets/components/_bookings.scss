@@ -1,0 +1,27 @@
+.booking-card {
+  width: 75%;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.booking-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.booking-card h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.booking-card p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}

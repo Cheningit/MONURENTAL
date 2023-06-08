@@ -22,6 +22,8 @@ user1.email = 'russell@email.com'
 user1.password = 'taawktljasktlw4aaglj'
 user1.save!
 
+# user1 = User.new(email:'russell@email.com', password:'taawktljasktlw4aaglj')
+
 user2 = User.new
 user2.email = 'tony@example.com'
 user2.password = 'taawktljasktlw4aaglj'
@@ -91,8 +93,10 @@ puts "cleaning your booking db.....:)"
 Booking.destroy_all
 
 puts "Creating booking"
-booking1 = Booking.new( status: "unconfirmed", date: "TBC", user: user1, building: Building.first)
-booking2 = Booking.new( status: "unconfirmed", date: "TBC", user: user2, building: Building.last)
-booking3 = Booking.new( status: "unconfirmed", date: "TBC", user: user2, building: Building.first)
-
+booking1 = Booking.new( status: "unconfirmed", date: "TBC", user: user1, total_price: 0, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 7), building: Building.first)
+booking1.save!
+booking2 = Booking.new( status: "unconfirmed", date: "TBC", user: user2, total_price: 0, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 7), building: Building.last)
+booking2.save!
+booking3 = Booking.new( status: "unconfirmed", date: "TBC", user: user2, total_price: 0, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 7),building: Building.first)
+booking3.save!
 puts "Finished!"

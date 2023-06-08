@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_151529) do
 
   create_table "bookings", force: :cascade do |t|
     t.string "status"
-    t.string "date" # can remove
+    t.string "date"
     t.bigint "user_id", null: false
     t.bigint "building_id", null: false
     t.datetime "created_at", null: false

@@ -102,10 +102,13 @@ puts "cleaning your booking db.....:)"
 Booking.destroy_all
 
 puts "Creating booking"
-booking1 = Booking.new( status: "unconfirmed", date: "TBC", user: user3, total_price: 0, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 8), building: Building.first)
+booking1 = Booking.new( status: "unconfirmed", date: "TBC", user: user3, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 8), building: Building.first)
+booking1.total_price = ((booking1.end_date - booking1.start_date) * booking1.building.price).to_i
 booking1.save!
-booking2 = Booking.new( status: "unconfirmed", date: "TBC", user: user2, total_price: 0, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 17), building: Building.last)
+booking2 = Booking.new( status: "unconfirmed", date: "TBC", user: user2, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 17), building: Building.last)
+booking2.total_price = ((booking2.end_date - booking2.start_date) * booking2.building.price).to_i
 booking2.save!
-booking3 = Booking.new( status: "unconfirmed", date: "TBC", user: user2, total_price: 0, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 10),building: Building.first)
+booking3 = Booking.new( status: "unconfirmed", date: "TBC", user: user2, start_date: Date.new(2024, 7, 7), end_date: Date.new(2024, 7, 10),building: Building.first)
+booking3.total_price = ((booking3.end_date - booking3.start_date) * booking3.building.price).to_i
 booking3.save!
 puts "Finished!"

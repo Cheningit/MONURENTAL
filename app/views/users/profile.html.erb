@@ -1,0 +1,9 @@
+<h1>Profile Page</h1>
+
+
+<p><%= @user.email %></p>
+<p><%= @user.first_name %></p>
+<p><%= @user.last_name %></p>
+
+
+<%= link_to "edit your personal information", edit_user_registration_path(@user.id) %>

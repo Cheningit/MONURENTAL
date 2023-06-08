@@ -9,5 +9,10 @@ Rails.application.routes.draw do
   resources :buildings, only: [:index, :show] do
     resources :bookings, only: [:new, :create]
   end
+  resources :users, only: [:profile, :edit, :update] do
+    collection do
+      get :profile
+    end
+  end
   resources :bookings, only: [:index, :show, :edit, :destroy]
 end

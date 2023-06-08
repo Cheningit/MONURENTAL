@@ -20,6 +20,8 @@ puts "creating users......"
 user1 = User.new
 user1.email = 'russell@email.com'
 user1.password = 'taawktljasktlw4aaglj'
+user1.first_name = "Russel"
+user1.last_name = "Smith"
 user1.save!
 
 # user1 = User.new(email:'russell@email.com', password:'taawktljasktlw4aaglj')
@@ -27,16 +29,23 @@ user1.save!
 user2 = User.new
 user2.email = 'tony@example.com'
 user2.password = 'taawktljasktlw4aaglj'
+user2.first_name = "Tony"
+user2.last_name = "Chen"
+
 user2.save!
 
 user3 = User.new
 user3.email = 'victor@homepage.com'
 user3.password = '#$taawktljasktlw4aaglj'
+user3.first_name = "Victor"
+user3.last_name = "Isopescu"
 user3.save!
 
 user4 = User.new
 user4.email = 'clement@england.com'
 user4.password = '#$taawktljasktlw4aaglj'
+user4.first_name = "Clement"
+user4.last_name = "Carr"
 user4.save!
 
 

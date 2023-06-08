@@ -6,6 +6,7 @@ class BuildingsController < ApplicationController
 
   def show
     @building = Building.find(params[:id])
+    @review = Review.new
   end
 
   private

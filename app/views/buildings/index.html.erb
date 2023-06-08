@@ -22,13 +22,16 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
+             <div class="card-description">
+                <%=building.address %>
+             </div>
       </div>
         <%# <img src="https://lp-cms-production.imgix.net/2020-11/GettyRF_1085205362.jpg" alt="Pyramids" class="card_img"> %>
         <div class="card-body">
           <%# <p class="card-text"> The Great Pyramids</p> %>
           <%# <p><button type="button" class="btn btn-dark btn-lg">Book</button></p> %>
-        <div class="btn btn-dark btn-lg bookings-button" style="background-color:red; width: 100%; height: 65px;">
-          <%=  link_to building.name, building_path(building) %>
+        <div class="btn btn-info btn-lg bookings-button" style="width: 100%; height: 70px;">
+          <%=  link_to building.name.titleize, building_path(building) %>
         </div>
 
 

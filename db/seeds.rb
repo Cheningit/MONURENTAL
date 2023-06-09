@@ -64,29 +64,25 @@ pyramids_of_giza = {address: "Egipt, MOHANDESEEN, 30 Lebanon St., ", name: "pyra
 colosseum = {address: "Italy, Rome, Piazza del Colosseo, 1, 00184 ", name: "colosseum", beds: 300, price:569000, availability: "9/7/2023", description: "Colosseum, also called Flavian Amphitheatre, giant amphitheatre built in Rome under the Flavian emperors. Construction of the Colosseum was begun sometime between 70 and 72 ce during the reign of Vespasian. It is located just east of the Palatine Hill, on the grounds of what was Nero’s Golden House. ", user: user1}
 
 # cloudinary section
-file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686058044/Tour_Eiffel_Wikimedia_Commons__28cropped_29_m76qge.jpg")
-building = Building.new(eiffel_tower)
-building.photos.attach(io: file, filename: "eiffel_tower.jpg", content_type: "image/jpg")
-building.save!
-
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304144/Eiffel-tower-fall-foliage-768x1024_f1drba.jpg")
 building = Building.new(eiffel_tower)
-building.photos.attach(io: file, filename: "eiffel_tower.jpg", content_type: "image/jpg")
-building.save!
+building.photos.attach(io: file, filename: "Tour_Eiffel_Wikimedia_Commons__28cropped_29_m76qge.jpg", content_type: "image/jpg")
+building.save
+
+file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686058044/Tour_Eiffel_Wikimedia_Commons__28cropped_29_m76qge.jpg")
+building.photos.attach(io: file, filename: "Eiffel-tower-fall-foliage-768x1024_f1drba.jpg", content_type: "image/jpg")
+building.save
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304184/Square-Rapp_a05zyz.jpg")
-building = Building.new(eiffel_tower)
-building.photos.attach(io: file, filename: "eiffel_tower.jpg", content_type: "image/jpg")
-building.save!
+building.photos.attach(io: file, filename: "Square-Rapp_a05zyz.jpg", content_type: "image/jpg")
+building.save
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304111/untitled-001_Olivier_20Costier_800px_hwpvyi.jpg")
-building = Building.new(eiffel_tower)
-building.photos.attach(io: file, filename: "eiffel_tower.jpg", content_type: "image/jpg")
+building.photos.attach(io: file, filename: "untitled-001_Olivier_20Costier_800px_hwpvyi.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304122/_5110031c-01_gerardtrang_800px_dueof5.jpg")
-building = Building.new(eiffel_tower)
-building.photos.attach(io: file, filename: "eiffel_tower.jpg", content_type: "image/jpg")
+building.photos.attach(io: file, filename: "_5110031c-01_gerardtrang_800px_dueof5.jpg", content_type: "image/jpg")
 building.save!
 
 
@@ -94,31 +90,26 @@ building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686058113/Taj_Mahal_2C_Agra_2C_India_edit3_npr4rg.jpg")
 building = Building.new(taj_mahal)
-building.photos.attach(io: file, filename: "taj_mahal.jpg", content_type: "image/jpg")
-building.save!
+building.photos.attach(io: file, filename: "Taj_Mahal_2C_Agra_2C_India_edit3_npr4rg.jpg", content_type: "image/jpg")
+building.save
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304214/pexels-photo-3361480_juvlrq.jpg")
-building = Building.new(taj_mahal)
-building.photos.attach(io: file, filename: "taj_mahal.jpg", content_type: "image/jpg")
-building.save!
+building.photos.attach(io: file, filename: "pexels-photo-3361480_juvlrq.jpg", content_type: "image/jpg")
+building.save
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304229/pexels-photo-2387871_htod1j.jpg")
-building = Building.new(taj_mahal)
 building.photos.attach(io: file, filename: "taj_mahal.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304243/pexels-photo-5458393_bk6zkz.jpg")
-building = Building.new(taj_mahal)
 building.photos.attach(io: file, filename: "taj_mahal.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304333/pexels-photo-2697288_pskqcp.jpg")
-building = Building.new(taj_mahal)
 building.photos.attach(io: file, filename: "taj_mahal.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304346/pexels-photo-7263939_yjdf7q.jpg")
-building = Building.new(taj_mahal)
 building.photos.attach(io: file, filename: "taj_mahal.jpg", content_type: "image/jpg")
 building.save!
 
@@ -130,27 +121,22 @@ building.photos.attach(io: file, filename: "great_wall_of_china.jpg", content_ty
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304536/iu_xpvswe.jpg")
-building = Building.new(great_wall_of_china)
 building.photos.attach(io: file, filename: "great_wall_of_china.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304583/iu_kaxp9w.jpg")
-building = Building.new(great_wall_of_china)
 building.photos.attach(io: file, filename: "great_wall_of_china.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304594/iu_xgpvgi.jpg")
-building = Building.new(great_wall_of_china)
 building.photos.attach(io: file, filename: "great_wall_of_china.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304607/476007_vv8yr9.jpg")
-building = Building.new(great_wall_of_china)
 building.photos.attach(io: file, filename: "great_wall_of_china.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304631/iu_giatib.jpg")
-building = Building.new(great_wall_of_china)
 building.photos.attach(io: file, filename: "great_wall_of_china.jpg", content_type: "image/jpg")
 building.save!
 
@@ -162,32 +148,26 @@ building.photos.attach(io: file, filename: "statue_of_liberty.jpg", content_type
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304659/iu_htclhk.jpg")
-building = Building.new(statue_of_liberty)
 building.photos.attach(io: file, filename: "statue_of_liberty.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304676/iu_zx5a78.jpg")
-building = Building.new(statue_of_liberty)
 building.photos.attach(io: file, filename: "statue_of_liberty.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304705/iu_fddjqs.jpg")
-building = Building.new(statue_of_liberty)
 building.photos.attach(io: file, filename: "statue_of_liberty.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304720/iu_uizzch.jpg")
-building = Building.new(statue_of_liberty)
 building.photos.attach(io: file, filename: "statue_of_liberty.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304733/iu_nef6fj.jpg")
-building = Building.new(statue_of_liberty)
 building.photos.attach(io: file, filename: "statue_of_liberty.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304756/iu_rmtmhz.jpg")
-building = Building.new(statue_of_liberty)
 building.photos.attach(io: file, filename: "statue_of_liberty.jpg", content_type: "image/jpg")
 building.save!
 
@@ -200,32 +180,26 @@ building.photos.attach(io: file, filename: "machu_pichu.jpg", content_type: "ima
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304809/934e6472-80de-479e-b69c-578ab07b6b7f_qqvnqs.jpg")
-building = Building.new(machu_pichu)
 building.photos.attach(io: file, filename: "machu_pichu.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304826/AdobeStock_64916665-scaled_sia5p7.jpg")
-building = Building.new(machu_pichu)
 building.photos.attach(io: file, filename: "machu_pichu.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304849/9865e70471a7267f4297205cfd187839_odfsze.jpg")
-building = Building.new(machu_pichu)
 building.photos.attach(io: file, filename: "machu_pichu.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304849/9865e70471a7267f4297205cfd187839_odfsze.jpg")
-building = Building.new(machu_pichu)
 building.photos.attach(io: file, filename: "machu_pichu.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304857/299834_xywvow.jpg")
-building = Building.new(machu_pichu)
 building.photos.attach(io: file, filename: "machu_pichu.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304867/ed08ad71e2cd56e396e89e5ebcd2b31c_bcgj87.jpg")
-building = Building.new(machu_pichu)
 building.photos.attach(io: file, filename: "machu_pichu.jpg", content_type: "image/jpg")
 building.save!
 
@@ -237,27 +211,22 @@ building.photos.attach(io: file, filename: "pyramids_of_giza.jpg", content_type:
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686305022/pyramid-of-giza-1_etay0o.jpg")
-building = Building.new(pyramids_of_giza)
 building.photos.attach(io: file, filename: "pyramids_of_giza.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686305038/e6a1c74279d274490773019422533710_upounh.jpg")
-building = Building.new(pyramids_of_giza)
 building.photos.attach(io: file, filename: "pyramids_of_giza.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686305048/giza-pyramids-3_dite0a.jpg")
-building = Building.new(pyramids_of_giza)
 building.photos.attach(io: file, filename: "pyramids_of_giza.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686305068/1037478-full-size-giza-pyramids-wallpaper-1920x1080-for-mobile_udctb6.jpg")
-building = Building.new(pyramids_of_giza)
 building.photos.attach(io: file, filename: "pyramids_of_giza.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686305114/20090204-egypt-1038_hr3kfl.jpg")
-building = Building.new(pyramids_of_giza)
 building.photos.attach(io: file, filename: "pyramids_of_giza.jpg", content_type: "image/jpg")
 building.save!
 # ================================================================================================================
@@ -268,27 +237,22 @@ building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_typ
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304996/Lighting_the_Sails_Sydney_Opera_House_credit_Daniel_Boud_010_mwzff0.jpg")
-building = Building.new(sydney_opera_house)
 building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304976/sydney-opera-house-australia_lncauu.jpg")
-building = Building.new(sydney_opera_house)
 building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304960/18486-sydney-opera-house-1920x1080-world-wallpaper_qufxcs.jpg")
-building = Building.new(sydney_opera_house)
 building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304953/iu_bzlzp9.jpg")
-building = Building.new(sydney_opera_house)
 building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686304933/52341_house-opera-wiezowce_cq3aat.jpg")
-building = Building.new(sydney_opera_house)
 building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
 building.save!
 
@@ -300,12 +264,29 @@ building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_typ
 building.save!
 
 file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686305208/Colosseum-Inside-Photo_tomfkr.jpg")
-building = Building.new(colosseum)
+building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
+building.save!
+
+file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686307164/rome2015-1507_xruuba.jpg")
+building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
+building.save!
+
+file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686307186/rome-colosseum-interior-ancient-rome-skip-the-line-guided-tour-2-scaled_zh7a60.jpg")
+building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
+building.save!
+
+file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686307250/Colosseum__Rome__15_optvzl.jpg")
 building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
 building.save!
 
 
+file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686307263/moon-colosseum_bqlof9.jpg")
+building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
+building.save!
 
+file = URI.open("https://res.cloudinary.com/dyb1vce9d/image/upload/v1686307271/18b01663-3d30-44d7-be6a-8ce1a7b5f0b6-7148-rome-colosseum-02_lyw9fq.jpg")
+building.photos.attach(io: file, filename: "sydney_opera_house.jpg", content_type: "image/jpg")
+building.save!
 # ================================================================================================================
 
 puts "cleaning your booking db.....:)"

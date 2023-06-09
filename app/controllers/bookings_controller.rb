@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     @booking.total_price = ((@booking.end_date - @booking.start_date) * @building.price).to_i
     @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path()
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -62,7 +62,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :date, :start_date, :end_date, :total_price)
+    params.require(:booking).permit(:status, :date, :start_date, :end_date, :comment, :total_price)
   end
 
   def text(booking)

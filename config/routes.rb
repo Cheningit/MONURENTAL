@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'reviews/new'
   devise_for :users
   root to: "pages#home"
+  get "download/:id", to: 'bookings#download', as: 'download'
   # get "/buildings", to: "pages#buildings"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # get "/uikit", to: "pages#uikit"

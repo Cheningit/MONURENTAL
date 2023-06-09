@@ -1,12 +1,19 @@
 <h1>Edit Booking</h1>
-<div class="col-6">
-  <%= simple_form_for @booking do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <div class="center-submit">
-      <%= f.submit class: "btn btn-primary" %>
-    </div>
-  <% end %>
-  <%# <% days = :end_date - :start_date %>
-  <%# <p>Staying for <%= days days%>
+<div class="button-container">
+  <div class="row">
+
+       <div class="card mb-3 card-left" style="width: 35rem; ">
+            <%= simple_form_for [@building, @booking] do |f| %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+            <%= f.input :comment %>
+      <div class="center-submit">
+        <%= f.submit class: "btn bookings-button", style:"width: 35%"%>
+      </div>
+    <% end %>
+       </div>
+
+
+  </div>
 </div>
+<%= render "pages/footer" %>

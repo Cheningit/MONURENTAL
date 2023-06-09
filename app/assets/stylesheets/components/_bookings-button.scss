@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: auto;
 }
 
 a {
@@ -20,5 +21,13 @@ a {
 .bookings-button:hover {
   background: grey;
   color: black;
+}
 
+@media (max-width: 768px) {
+  /* … */
+  .bookings-button {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+    }
 }

@@ -1,31 +1,41 @@
-<h1 class="booking-title">Here are your upcoming Monumental bookings:</h1>
-<br>
-<div class="booking-card">
+<h1 class="booking-title mb-3">Here are your upcoming Monumental bookings:</h1>
+
     <% if @bookings.empty? %>
       <p>You have no bookings at present. </p>
     <% else %>
     <%  @bookings.each do |booking|%>
-      <div>
-        <h3><%= booking.building.address %></h3>
-        <p><%= booking.building.address %></p>
-        <br>
-        <p>Start Date <%= booking.start_date %></p>
-        <p>End Date <%= booking.end_date %></p>
-        <p>Status: <%= "Pending" if booking.status.nil? %></p>
-        <p><% days = booking.end_date - booking.start_date%>Duration: <%= days.to_i %> day(s)</p>
-        <p><strong>Total cost</strong> - £ <%= (days.to_i)*(booking.building.price.to_i) %></p>
-        <br>
-        <%= link_to "Download", download_path(booking), class: "bookings-button", style: "background-color: rgb(189, 252, 210)" %>
-        <%= link_to "Edit Reservation", edit_booking_path(booking), class: "bookings-button"  %>
-        <%= link_to "Delete Reservation", booking_path(booking), class: "bookings-button", style: "background-color: red",
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
-        <br>
-      <% end %>
+      <div class="booking-card">
+<div class="booking-card mb-3">
+        <div class="booking-address">
+          <h3><%= booking.building.address %></h3>
+          <p><%= booking.building.address %></p>
+        </div>
+        <div class="booking-content d-flex justify-content-center">
+          <div class="booking-image align-items-center">
+            <%= cl_image_tag booking.building.photos[0].key, height: 300, width: 400, crop: :fill %>
+          </div>
+          <div class="booking-info align-items-center">
+            <p>Start Date <%= booking.start_date %></p>
+            <p>End Date <%= booking.end_date %></p>
+            <p>Status: <%= "Pending" if booking.status.nil? %></p>
+            <p><% days = booking.end_date - booking.start_date%>Duration: <%= days.to_i %> day(s)</p>
+            <p><strong>Total cost</strong> - £ <%= (days.to_i)*(booking.building.price.to_i) %></p>
+          </div>
+        </div>
+        <%# </div> %>
+          <%= link_to "Download", download_path(booking), class: "bookings-button mb-1", style: "background-color: rgb(189, 252, 210)" %>
+          <%= link_to "Edit Reservation", edit_booking_path(booking), class: "bookings-button mb-1"  %>
+          <%= link_to "Delete Reservation", booking_path(booking), class: "bookings-button mb-1", style: "background-color: rgb(237, 135, 128)",
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+
+        </div>
       </div>
+      <% end %>
     <% end %>
 </div>
 <br>
-<h1 class="booking-title">Pending requests for your Monument:</h1>
+<h1 class="booking-title mb-3">Pending requests for your Monument:</h1>
+
 <div class="booking-card">
   <% if @bookings_owner.empty? %>
     <p>No bookings to review at present</p>
@@ -38,6 +48,7 @@
       <% days = booking.end_date - booking.start_date%>
       <p>Duration: <%= days.to_i %> day(s)</p>
       <p>Total Price: <%= booking.total_price %></p>
+      <p>Comments: <% booking.comment %>
       <% end %>
   <% end %>
 </div>

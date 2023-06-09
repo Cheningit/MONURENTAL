@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
   devise_for :users
   root to: "pages#home"
   get "download/:id", to: 'bookings#download', as: 'download'
@@ -8,8 +9,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :buildings, only: [:index, :show] do
+    resources :reviews, only: :create
     resources :bookings, only: [:new, :create]
   end
+  resources :reviews, only: [:destroy]
 
   resources :users, only: [:profile, :edit, :update] do
     collection do

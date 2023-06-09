@@ -15,6 +15,7 @@
     transition: all 0.5s;
     background-color: #EEEEFB;
     height: 500px;
+    margin: auto;
 
     &:hover {
       box-shadow: 0 0 10px rgb(230, 230, 230);
@@ -37,5 +38,3 @@
 .mb-3 {
   margin-top: 50px;
 }
-
-

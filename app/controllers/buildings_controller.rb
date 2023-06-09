@@ -12,6 +12,6 @@ class BuildingsController < ApplicationController
   private
 
   def buildings_params
-    params.require(:building).permit(:address, :name, :beds, :price, :availability, photos: [])
+    params.require(:building).permit(:address, :name, :beds, :price, :availability, :description, photos: [])
   end
 end

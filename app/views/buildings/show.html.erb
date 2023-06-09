@@ -1,15 +1,22 @@
 <br>
 <div>
   <div class="col-7">
+      <%# MULTI PHTOS SECTION VIA CLOUDINARY ================================================================================= %>
+      <% @building.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <%# ================================================================================= %>
     <div class="booking-card">
-
       <h1>The <%= @building.name.titleize %></h1>
       <p>Address: <%= @building.address %></p>
       <p>Beds: <%= @building.beds %></p>
       <p>Price: <%= @building.price %></p>
       <p>Next availabile from: <%= @building.availability %></p>
+      <p>Description: <%= @building.description %></p>
 
       <%= cl_image_tag @building.photos[0].key, height: 300, width: 400, crop: :fill %>
+
+      <%= link_to "Book Today", new_building_booking_path(@building) %>
     </div>
     <br>
     <div class="button-container">
@@ -22,10 +29,8 @@
   </div>
 </div>
 
-<%= cl_image_tag @building.photos[0].key, height: 300, width: 400, crop: :fill %>
-<%= link_to "Book Today", new_building_booking_path(@building) %>
 
-
+<%# REVIEW SECTION ================================================================================= %>
 <p><strong>Reviews</strong></p>
 <ul class="list-group">
 

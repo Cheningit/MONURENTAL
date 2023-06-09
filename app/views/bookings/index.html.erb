@@ -23,9 +23,9 @@
           </div>
         </div>
         <%# </div> %>
-          <%= link_to "Download", download_path(booking), class: "bookings-button mb-1", style: "background-color: rgb(189, 252, 210)" %>
-          <%= link_to "Edit Reservation", edit_booking_path(booking), class: "bookings-button mb-1"  %>
-          <%= link_to "Delete Reservation", booking_path(booking), class: "bookings-button mb-1", style: "background-color: rgb(237, 135, 128)",
+          <%= link_to "Download", download_path(booking), class: "bookings-button mb-1", style: "width: 30%; background-color: #03AC13" %>
+          <%= link_to "Edit Reservation", edit_booking_path(booking), class: "bookings-button mb-1", style: "width: 30%; background-color: #8746f1" %>
+          <%= link_to "Delete Reservation", booking_path(booking), class: "bookings-button mb-1", style: "width: 30%; background-color: rgb(237, 135, 128)",
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
 
         </div>
@@ -56,3 +56,5 @@
 <div class="button-container">
   <%= link_to "Back to Monuments", buildings_path(), class: "bookings-button", style:"width: 75%" %>
 </div>
+
+<%= render "pages/footer" %>

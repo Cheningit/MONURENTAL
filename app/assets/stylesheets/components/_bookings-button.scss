@@ -22,3 +22,12 @@ a {
   background: grey;
   color: black;
 }
+
+@media (max-width: 768px) {
+  /* … */
+  .bookings-button {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+    }
+}

@@ -1,18 +1,24 @@
 <br>
 <div>
-  <div class="col-7">
-      <%# MULTI PHTOS SECTION VIA CLOUDINARY ================================================================================= %>
-      <% @building.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
+  <div class="button-container">
+    <div class="row">
+    <div class="col-7">
+        <%# MULTI PHTOS SECTION VIA CLOUDINARY ================================================================================= %>
+        <div class="card mb-3 card-left" style="width: 35rem; ">
+
+          <p><%= @building.description %></p>
+          <% @building.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+        </div>
+    </div>
       <%# ================================================================================= %>
-    <div class="booking-card">
+    <div class="booking-card col-lg-6">
       <h1>The <%= @building.name.titleize %></h1>
       <p>Address: <%= @building.address %></p>
       <p>Beds: <%= @building.beds %></p>
       <p>Price: <%= @building.price %></p>
       <p>Next availabile from: <%= @building.availability %></p>
-      <p>Description: <%= @building.description %></p>
 
       <%= cl_image_tag @building.photos[0].key, height: 300, width: 400, crop: :fill %>
 
@@ -47,5 +53,3 @@
     <%= f.submit "Submit review", class: "btn btn-primary" %>
   <% end %>
 </ul>
-
-
